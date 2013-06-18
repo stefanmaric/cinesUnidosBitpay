@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Continuar con el pago.</title>
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <h3>Completar pago.</h3>
+                    <form name="pago" id="pago" class="form-horizontal">
+                    <div class="control-group">
+                      <label class="control-label">Tipo de pago</label>
+                      <div class="controls">
+                        <label for="typeVisa">
+                            <input type="radio" name="type" id="typeVisa" placeholder="Visa" value="visa" class="payMethod">
+                            Visa
+                        </label>
+                        <label for="typeMaster">
+                            <input type="radio" name="type" id="typeMaster" placeholder="MasterCard" value="master" class="payMethod">
+                            Master Card
+                        </label>
+                        <label for="typeAmerican">
+                            <input type="radio" name="type" id="typeAmerican" placeholder="American Express" value="american" class="payMethod">
+                            American Express
+                        </label>
+                        <label for="typeBitcoin">
+                            <input type="radio" name="type" id="typeBitcoin" placeholder="Bitcoin" value="bitcoin" class="payMethod">
+                            Bitcoin
+                        </label>
+                      </div>
+                    </div>
+                    <div class="control-group" id="bitcoinSection" style="display:none">
+                      <label class="control-label" for="inputPassword">Bitcoin</label>
+                      <div class="controls">
+                        <a class="coinbase-button" data-code="5e22bd653166faa30facfd3279bcba6d" data-button-style="buy_now_small" href="https://coinbase.com/checkouts/5e22bd653166faa30facfd3279bcba6d">Bitcoin</a>
+                        <script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <div class="controls">
+                        </label>
+                        <button type="submit" class="btn">Terminar</button>
+                      </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+        <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="./js/main.js"></script>
+    </body>
+</html>
