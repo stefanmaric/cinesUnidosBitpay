@@ -14,7 +14,7 @@ for (var i = 0, j = payTypes.length; i < j; i++) {
 
 var mongoLabs = function() {
 
-	function insertPayment(idFactura, publicKey, status) {
+	this.insertPayment = function(idFactura, publicKey, status) {
 		var passKey = window.btoa(idFactura).substring(0,4);
 
 		var payment = {}
@@ -25,10 +25,15 @@ var mongoLabs = function() {
 		payment.creationDate	= new Date();
 		payment.passKey 		= passKey;
 
-		
-
+    $.ajax({ 
+      url: "https://api.mongolab.com/api/1/databases/cinesunidos/collections/payments?apiKey=504557bce4b072c137d81770",
+      data: JSON.stringify(payment),
+      type: "POST",
+      contentType: "application/json" 
+    });
+	
 		return passKey;
 	}
 
 	return this
-}
+}();
