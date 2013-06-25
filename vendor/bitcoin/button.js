@@ -8,7 +8,7 @@
         }, (b.getElementsByTagName("head")[0] || b.documentElement).appendChild(h)
     }, a(window, document, "1.7", function (a, b) {
         var c, d, e, f, g = this;
-        return d = "https://raw.github.com/alexstefan92/cinesUnidosBitpay/custom-iframe/bc.html", f = function (a) {
+        return d = "https://coinbase.com", f = function (a) {
             if (a === "development") return d = "http://localhost:3000";
             if (a === "test") return d = "http://" + window.document.location.host
         }, e = function (b) {
@@ -40,7 +40,7 @@
             }
         }, window.addEventListener("message", e, !1), f(a("body").data("env")), a(".coinbase-button").each(function (b, e) {
             var g, h, i, j, k, l;
-            return g = a(e), i = g.data(), i.referrer = document.domain, k = a.param(i), h = g.data("code"), l = g.data("width") || c(g.data("button-style")), j = g.data("height") || 46, f(g.data("env")), g.data("button-style") !== "none" && g.replaceWith("<iframe src='" + d +"' id='coinbase_button_iframe_" + h + "' name='coinbase_button_iframe_" + h + "' style='width: " + l + "px; height: " + j + "px; border: none; overflow: hidden;' scrolling='no' allowtransparency='true' frameborder='0'></iframe>"), a("body").append("<iframe src='" + d + "/buttons/" + h + "/widget?" + k + "' id='coinbase_modal_iframe_" + h + "' name='coinbase_modal_iframe_" + h + "' style='background-color: transparent; border: 0px none transparent; overflow: hidden; display: none; position: fixed; visibility: visible; margin: 0px; padding: 0px; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 9999;' scrolling='no' allowtransparency='true' frameborder='0'></iframe>")
+            return g = a(e), i = g.data(), i.referrer = document.domain, k = a.param(i), h = g.data("code"), l = g.data("width") || c(g.data("button-style")), j = g.data("height") || 46, f(g.data("env")), g.data("button-style") !== "none" && g.replaceWith("<iframe src='" + d + "/buttons/" + h + "/step0?" + k + "' id='coinbase_button_iframe_" + h + "' name='coinbase_button_iframe_" + h + "' style='width: " + l + "px; height: " + j + "px; border: none; overflow: hidden;' scrolling='no' allowtransparency='true' frameborder='0'></iframe>"), a("body").append("<iframe src='" + d + "/buttons/" + h + "/widget?" + k + "' id='coinbase_modal_iframe_" + h + "' name='coinbase_modal_iframe_" + h + "' style='background-color: transparent; border: 0px none transparent; overflow: hidden; display: none; position: fixed; visibility: visible; margin: 0px; padding: 0px; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 9999;' scrolling='no' allowtransparency='true' frameborder='0'></iframe>")
         }), a(document).on("coinbase_show_modal", function (b, c) {
             return a("#coinbase_modal_iframe_" + c).length > 0 ? (a("#coinbase_modal_iframe_" + c).show(), frames["coinbase_modal_iframe_" + c].postMessage("show modal|" + c, d)) : console.log("Could not find Coinbase modal with id 'coinbase_modal_iframe_" + c + "'.  Does this match the data-code attribute in your embed HTML?")
         })
